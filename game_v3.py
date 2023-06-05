@@ -14,16 +14,17 @@ def random_predict(number: int = 1) -> int:
     Returns:
         int: Число попыток
     """
-    count = 0
-    max_point=101
-    min_point=0
+   
+    count = 0 # изначальное значение счетчика
+    max_point = 101 # определяем максимальное значение числа +1
+    min_point = 0  # определяем минимальное значение
     
-    while True:
+    while True:   # используем бесконечный цикл
       count += 1
-      predict=(max_point+min_point)//2 
+      predict=(max_point+min_point)//2 #сокращаем возможные варианты в 2 раза, в зависимости от области нахождения числа
       if predict==number:
-        break
-      elif predict < number:
+        break # выход из цикла если угадали
+      elif predict<number: # при получении значения меньшего  или большего от загаданного числа сдвигаем границы 
         min_point=predict
       else:
         max_point=predict
